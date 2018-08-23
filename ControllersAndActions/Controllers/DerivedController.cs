@@ -17,15 +17,7 @@ namespace ControllersAndActions.Controllers
 
         public ActionResult ProduceOutput()
         {
-            if (Server.MachineName == "DESKTOP-7C4S75T")
-            {
-                return new CustomRedirectResult { Url = "/Basic/Index" };
-            }
-            else
-            {
-                Response.Write("Controller: Derived, Action: ProduceOutput");
-                return null;
-            }
+            return new RedirectResult("/Basic/Index");
         }
     }
 }
