@@ -13,5 +13,17 @@ namespace ControllersAndActions.Controllers
             ViewBag.Message = "Hello from the DerivedController Index method";
             return View("MyView");
         }
+
+        public void ProduceOutput()
+        {
+            if (Server.MachineName == "DESKTOP-7C4S75T")
+            {
+                Response.Redirect("/Basic/Index");
+            }
+            else
+            {
+                Response.Write("Controller: Derived, Action: ProduceOutput");
+            }
+        }
     }
 }
