@@ -24,5 +24,11 @@ namespace ControllersAndActions.Controllers
                 ID = "MyID"
             });
         }
+
+        public RedirectToRouteResult RedirectToRoute()
+        {
+            return RedirectToAction("Index", "Basic");
+        }
+
     }
 }
