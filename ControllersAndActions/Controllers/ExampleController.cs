@@ -34,7 +34,7 @@ namespace ControllersAndActions.Controllers
 
         public HttpStatusCodeResult StatusCode()
         {
-            return HttpNotFound();
+            return new HttpUnauthorizedResult();
         }
     }
 }
