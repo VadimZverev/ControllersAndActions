@@ -34,7 +34,7 @@ namespace ControllersAndActions.Controllers
 
         public HttpStatusCodeResult StatusCode()
         {
-            return new HttpStatusCodeResult(404, "URL cannot be serviced");
+            return HttpNotFound();
         }
     }
 }
