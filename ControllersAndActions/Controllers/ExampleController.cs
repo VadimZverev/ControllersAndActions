@@ -10,8 +10,11 @@ namespace ControllersAndActions.Controllers
     {
         public ViewResult Index()
         {
-            DateTime date = DateTime.Now;
-            return View(date);
+            //DateTime date = DateTime.Now;
+            //return View(date);
+
+            return View((object)"Hello, World");
+
         }
     }
 }

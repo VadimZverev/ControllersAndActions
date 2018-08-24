@@ -15,7 +15,7 @@ namespace ControllersAndActions.Tests
             // Act - вызов метода действия
             ViewResult result = target.Index();
             // Assert - проверка результата
-            Assert.AreEqual("Homepage", result.ViewName);
+            Assert.AreEqual("Hello, World", result.ViewData.Model);
         }
     }
 }
