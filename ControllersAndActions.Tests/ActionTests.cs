@@ -32,5 +32,19 @@ namespace ControllersAndActions.Tests
             // Assert - проверка результата
             Assert.AreEqual("Hello", result.ViewBag.Message);
         }
+
+        [TestMethod]
+        public void RedirectTest()
+        {
+            // Arrange - создание контроллера
+            ExampleController target = new ExampleController();
+
+            // Act - вызов метода действия
+            RedirectResult result = target.Redirect();
+
+            // Assert - проверка результата
+            Assert.IsTrue(result.Permanent);
+            Assert.AreEqual("/Example/Index", result.Url);
+        }
     }
 }
