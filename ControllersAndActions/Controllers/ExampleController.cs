@@ -10,8 +10,8 @@ namespace ControllersAndActions.Controllers
     {
         public ViewResult Index()
         {
-            ViewBag.Message = TempData["Message"];
-            ViewBag.Date = TempData["Date"];
+            ViewBag.Message = "Hello";
+            ViewBag.Date = DateTime.Now;
             return View();
         }
 
@@ -32,5 +32,9 @@ namespace ControllersAndActions.Controllers
             return RedirectToAction("Index");
         }
 
+        public HttpStatusCodeResult StatusCode()
+        {
+            return new HttpStatusCodeResult(404, "URL cannot be serviced");
+        }
     }
 }
