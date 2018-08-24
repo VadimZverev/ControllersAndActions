@@ -8,19 +8,6 @@ namespace ControllersAndActions.Tests
     public class ActionTests
     {
         [TestMethod]
-        public void ViewSelectionTest()
-        {
-            // Arrange - создание контроллера
-            ExampleController target = new ExampleController();
-
-            // Act - вызов метода действия
-            ViewResult result = target.Index();
-
-            // Assert - проверка результата
-            Assert.AreEqual("Hello, World", result.ViewData.Model);
-        }
-
-        [TestMethod]
         public void ControllerTest()
         {
             // Arrange - создание контроллера
@@ -34,17 +21,19 @@ namespace ControllersAndActions.Tests
         }
 
         [TestMethod]
-        public void RedirectTest()
+        public void RedirectValueTest()
         {
             // Arrange - создание контроллера
             ExampleController target = new ExampleController();
 
             // Act - вызов метода действия
-            RedirectResult result = target.Redirect();
+            RedirectToRouteResult result = target.Redirect();
 
             // Assert - проверка результата
-            Assert.IsTrue(result.Permanent);
-            Assert.AreEqual("/Example/Index", result.Url);
+            Assert.IsFalse(result.Permanent);
+            Assert.AreEqual("Example", result.RouteValues["controller"]);
+            Assert.AreEqual("Index", result.RouteValues["action"]);
+            Assert.AreEqual("MyID", result.RouteValues["ID"]);
         }
     }
 }
