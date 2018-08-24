@@ -10,7 +10,8 @@ namespace ControllersAndActions.Controllers
     {
         public ViewResult Index()
         {
-            return View("Homepage");
+            DateTime date = DateTime.Now;
+            return View(date);
         }
     }
 }
